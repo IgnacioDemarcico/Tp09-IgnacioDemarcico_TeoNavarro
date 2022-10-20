@@ -18,7 +18,17 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Compe()
+    {
+        return View();
+    }
+
+    public IActionResult Tierlist()
+    {
+        return View();
+    }
+
+    public IActionResult Comunidad()
     {
         return View();
     }
