@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Tp09-IgnacioDemarcico_TeoNavarro.Models;
+namespace Tp09_IgnacioDemarcico_TeoNavarro.Models;
 
 public class Pokemon{
 
