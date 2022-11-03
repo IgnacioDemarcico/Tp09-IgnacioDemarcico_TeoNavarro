@@ -27,7 +27,7 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    
     public IActionResult Comunidad()
     {
         return View();
@@ -36,6 +36,19 @@ public class HomeController : Controller
     {
         return View();
     }
+        public IActionResult Tierlist2()
+    {
+        return View();
+    }
+        public IActionResult Tierlist3()
+    {
+        return View();
+    }
+        public IActionResult Tierlist4()
+    {
+        return View();
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

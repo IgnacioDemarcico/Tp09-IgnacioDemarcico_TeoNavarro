@@ -46,7 +46,7 @@ const appendImage = (card) => {
 }
 
 const deleteCard = (event) => {
-  // const willDeleteCard = window.confirm('Do you want to delete this card?');
+  const willDeleteCard = window.confirm('Deseas eliminar esta carta?');
   if (willDeleteCard) {
     event.target.remove();
   }

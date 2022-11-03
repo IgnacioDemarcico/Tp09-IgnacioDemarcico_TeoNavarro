@@ -6,13 +6,13 @@ using Dapper;
 namespace Tp09_IgnacioDemarcico_TeoNavarro.Models;
 public static class BD
 {
-    private static string _connectionString = @"Server=A-PHZ2-CIDI-043;DataBase=Pokebae;Trusted_Connection=True";
+    private static string _connectionString = @"Server=A-PHZ2-CIDI-032;DataBase=Pokebae;Trusted_Connection=True";
     public static void AgregarPokemon(Pokemon Pokemon)
     {
         using (SqlConnection bd = new SqlConnection(_connectionString))
         {
-            string sql = $"INSERT INTO Pokemons(IdPokemon, Nombre, FechaCracion, Foto, Tipo1, Tipo2, Altura, Peso, Pokedex, Paparicion) VALUES(@pIdPokemon,@pNombre,@pFechaCreacion,@pFoto,@pTipo1,@pTipo2,@pAltura,@pPeso,@Pokedex,@pAparicion)";
-            bd.Execute(sql, new { pIdPokemon = Pokemon.IdPokemon, pNombre = Pokemon.Nombre, pFechaCreacion = Pokemon.FechaCreacion, pFoto = "/bd/"+ Pokemon.Foto, pTipo1 = Pokemon.Tipo1, pTipo2 = Pokemon.Tipo2, pAltura = Pokemon.Altura, pPeso = Pokemon.Peso, pPokedex = Pokemon.Pokedex, pPaparicion = Pokemon.PAparicion });
+            string sql = $"INSERT INTO Pokemons(IdPokemon, Nombre, FechaCracion, Foto, Tipo1, Tipo2, Altura, Peso) VALUES(@pIdPokemon,@pNombre,@pFechaCreacion,@pFoto,@pTipo1,@pTipo2,@pAltura,@pPeso)";
+            bd.Execute(sql, new { pIdPokemon = Pokemon.IdPokemon, pNombre = Pokemon.Nombre, pFechaCreacion = Pokemon.FechaCreacion, pFoto = "/bd/"+ Pokemon.Foto, pTipo1 = Pokemon.Tipo1, pTipo2 = Pokemon.Tipo2, pAltura = Pokemon.Altura, pPeso = Pokemon.Peso});
 
         }
         
