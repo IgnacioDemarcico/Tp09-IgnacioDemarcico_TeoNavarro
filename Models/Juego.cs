@@ -19,7 +19,7 @@ public Juego( string Nombre, DateTime FechaSalida, string Region, int Generacion
         _Pokedex = Pokedex;
         _FotoJuego = FotoJuego; 
 }
-
+public Juego(){}
 public string Nombre
 {
     get{return _Nombre;}

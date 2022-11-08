@@ -6,7 +6,7 @@ using Dapper;
 namespace Tp09_IgnacioDemarcico_TeoNavarro.Models;
 public static class BD
 {
-    private static string _connectionString = @"Server=A-PHZ2-CIDI-032;DataBase=Pokebae;Trusted_Connection=True";
+    private static string _connectionString = @"Server=A-PHZ2-CIDI-047;DataBase=Pokebae;Trusted_Connection=True";
     public static void AgregarPokemon(Pokemon Pokemon)
     {
         using (SqlConnection bd = new SqlConnection(_connectionString))
@@ -46,10 +46,16 @@ public static class BD
         }
         return Pokemon;
     }
-}
-
-
-    
+    public static Juego VerInfoJuego(string nombre)
+    {
+        Juego juego = new Juego();
+        using (SqlConnection bd = new SqlConnection(_connectionString))
+        {
+            string sql = $"SELECT * FROM Juegos WHERE Nombre = {nombre}";
+            juego = bd.QueryFirstOrDefault<Juego>(sql);
+        }
+        return juego;
+    }
     public static List<Juego> ListarJuegos()
     {
         List<Juego> ListaJuegos = new List<Juego>();
@@ -60,6 +66,11 @@ public static class BD
         }
         return ListaJuegos;
     }
+}
+
+
+    
+
     /*public static List<Jugador> ListarJugadores(int IdEquipo)
     {
         List<Jugador> ListaJugadores = new List<Jugador>();
@@ -70,4 +81,4 @@ public static class BD
         }
         return ListaJugadores;
     }*/
-}
+

@@ -9,17 +9,17 @@ function MostrarInfoJuegos(Nombre)
         {
             type:'POST',
             dataType: 'json',
-            url: 'Home/Juegos',  
-            data:{Nombre: Nombre},
+            url: 'Home/DevolverJuego',
+            data:{nombreJuego: Nombre},
             success:
                 function (response)
                 {
-                    $("#ModalTitulo").html(response.Nombre);
-                    $("#Nombre").html(response.Nombre);
-                    $("#Region").html("<br>" +response.Region);
-                    $("#FechaSalida").html("<br>" + response.FechaSalida);
-                    $("#Generacion").html("<br>" + response.Generacion);
-                    $("#Pokedex").html("<br>" + response.Pokedex);
+                    $("#ModalTitulo").html(response.nombre);
+                    $("#Nombre").html(response.nombre);
+                    $("#Region").html("<br>" + response.region);
+                    $("#FechaSalida").html("<br>" + response.fechaSalida);
+                    $("#Generacion").html("<br>" + response.generacion);
+                    $("#Pokedex").html("<br>" + response.pokedex);
                 },
             complete:
                 function(xhr, status){

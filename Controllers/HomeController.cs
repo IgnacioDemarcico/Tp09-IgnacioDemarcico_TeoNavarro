@@ -50,7 +50,13 @@ public class HomeController : Controller
     }
     public IActionResult Juegos()
     {
+        ViewBag.ListarJuegos = BD.ListarJuegos();
         return View();
+    }
+    public Juego DevolverJuego(string nombreJuego)
+    {
+        Juego juego = BD.VerInfoJuego(nombreJuego);
+        return juego;
     }
 
 
