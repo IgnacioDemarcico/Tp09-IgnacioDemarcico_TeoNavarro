@@ -1,7 +1,30 @@
-@{
-    ViewData["Title"] = "";
-}
 
+
+<body background="/img/fondo.svg">
+<br>
+<br>
+<br>
+<div class="row">
+@foreach (Juego item in ViewBag.ListaJuegos)
+{
+    <div class="col-3">
+    <div class="card text-bg-dark mb-3" style="width: 20rem; display: flex; text-align: center;">
+        <img src="@item.ImagenSerie" class="card-img-top">
+        <div class="card-body" >
+            <h5 class="card-title">@item.Nombre</h5>
+            <button type="button" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSerie"
+            onclick="MostrarInfoSerie(@item.IdSerie)"> Info </button>
+            <button type="button" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSerie"
+            onclick="MostrarActoresSerie(@item.IdSerie, '@item.Nombre')"> Actores </button>
+            <button type="button" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSerie"
+            onclick="MostrarTemporadasSerie(@item.IdSerie, '@item.Nombre')"> Temporadas </button>
+        </div>
+    </div>
+    </div>
+}
+</div>
+
+</body>
 <h2>modals con ajax</h2>
 
 <h2>cuando los abris te aparecen los datos de las cosas</h2>

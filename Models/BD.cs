@@ -49,18 +49,18 @@ public static class BD
 }
 
 
-    /*
-    public static List<Equipo> ListarEquipos()
+    
+    public static List<Juego> ListarJuegos()
     {
-        List<Equipo> ListaEquipos = new List<Equipo>();
+        List<Juego> ListaJuegos = new List<Juego>();
         using (SqlConnection bd = new SqlConnection(_connectionString))
         {
-            string sql = $"SELECT * FROM Equipos";
-            ListaEquipos = bd.Query<Equipo>(sql).ToList();
+            string sql = $"SELECT * FROM Juegos";
+            ListaJuegos = bd.Query<Juego>(sql).ToList();
         }
-        return ListaEquipos;
+        return ListaJuegos;
     }
-    public static List<Jugador> ListarJugadores(int IdEquipo)
+    /*public static List<Jugador> ListarJugadores(int IdEquipo)
     {
         List<Jugador> ListaJugadores = new List<Jugador>();
         using (SqlConnection bd = new SqlConnection(_connectionString))
@@ -69,6 +69,5 @@ public static class BD
             ListaJugadores = bd.Query<Jugador>(sql, new { pIdEquipo = IdEquipo }).ToList();
         }
         return ListaJugadores;
-    }
+    }*/
 }
-*/
