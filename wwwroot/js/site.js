@@ -10,7 +10,7 @@ function MostrarInfoJuegos(Nombre)
             type:'POST',
             dataType: 'json',
             url: 'Home/Juegos',  
-            data:{nombre: NombrePais},
+            data:{Nombre: Nombre},
             success:
                 function (response)
                 {
