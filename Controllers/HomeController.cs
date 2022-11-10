@@ -32,22 +32,7 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult TierList1()
-    {
-        return View();
-    }
-        public IActionResult Tierlist2()
-    {
-        return View();
-    }
-        public IActionResult Tierlist3()
-    {
-        return View();
-    }
-        public IActionResult Tierlist4()
-    {
-        return View();
-    }
+   
     public IActionResult Juegos()
     {
         ViewBag.ListarJuegos = BD.ListarJuegos();

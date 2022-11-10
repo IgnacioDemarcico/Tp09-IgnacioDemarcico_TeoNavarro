@@ -1,28 +1,35 @@
-@{
-    ViewData["Title"] = "";
-}
- <h1 style="color:#FFFFFF">Tierlists</h1>
-
-<head>
-<br>
-</head>
+<link rel="stylesheet" href="~/css/stylesTierList.css" asp-append-version="true" />
 
 <body background="/img/fondo.svg">
-<div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="false">
-   Lista Tierlists
-  </a>
-  <a href= "TierList1" target = "blank" class="list-group-item list-group-item-action">Iniciales</a>
-  <a href="TierList2" target = "blank" class="list-group-item list-group-item-action">Pokemon Unite</a>
-  <a href="TierList3" target = "blank" class="list-group-item list-group-item-action">Vgc</a>
-  <a href="TierList4" target = "blank" class="list-group-item list-group-item-action">Megaevoluciones</a>
-  <a class="list-group-item list-group-item-action disabled">Gigamax(Proximamente)</a>
+  <span class="headerContainer">
+      <h1 style="color:#FFFFFF">TierList</h1>
+</span>
+<div id="board">
+  <div class="row">
+    <div class="label">S</div>
+  </div>
+  <div class="row">
+    <div class="label">A</div>
+  </div>
+  <div class="row">
+    <div class="label">B</div>
+  </div>
+  <div class="row">
+    <div class="label">C</div>
+  </div>
+  <div class="row">
+    <div class="label">D</div>
+  </div>
+  <div class="row">
+    <div class="label">F</div>
+  </div>
 </div>
-<br>
-<br>
+<h2 style="color:#FFFFFF">Card Bank <button id="addCard">➕</button></h2> 
 
-<input type="file"
-       id="avatar" name="avatar"
-       accept="image/png, image/jpeg" style="color:#FFFFFF">
+<div id="bank"></div>
+
 </body>
 
+<script src="~/js/cards.js"></script>
+<script src="~/js/rows.js"></script>
+<script src="~/js/bank.js"></script>

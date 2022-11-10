@@ -6,7 +6,7 @@ using Dapper;
 namespace Tp09_IgnacioDemarcico_TeoNavarro.Models;
 public static class BD
 {
-    private static string _connectionString = @"Server=A-PHZ2-CIDI-047;DataBase=Pokebae;Trusted_Connection=True";
+    private static string _connectionString = @"Server=A-PHZ2-CIDI-032;DataBase=Pokebae;Trusted_Connection=True";
     public static void AgregarPokemon(Pokemon Pokemon)
     {
         using (SqlConnection bd = new SqlConnection(_connectionString))
