@@ -37,7 +37,12 @@ body{
   background-size: cover;
 }
 
+
 .col-4
 {
   padding-left: 5%;
 }
+.letra{
+  color: white;
+}
+
