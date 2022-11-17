@@ -1,10 +1,8 @@
 
 
 <body>
-<br>
-<br>
-<br>
-<div class="row">
+
+<div class="row"  style="margin-top: 5%;">
 @foreach (Juego item in ViewBag.ListarJuegos)
 {
     <div class="col-3">
@@ -31,14 +29,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <img id="FotoJuego" style="height: 15rem; display: flex; margin: auto;">
         <div id="Nombre"></div>
         <div id="Region"></div>
         <div id="FechaSalida"></div>
         <div id="Generacion"></div>
         <div id="Pokedex"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

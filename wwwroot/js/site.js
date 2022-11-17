@@ -8,18 +8,19 @@ function MostrarInfoJuegos(Nombre)
     $.ajax(
         {
             type:'POST',
-            dataType: 'json',
-            url: 'Home/DevolverJuego',
+            dataType: 'JSON',
+            url: '/Home/DevolverJuego',
             data:{nombreJuego: Nombre},
             success:
                 function (response)
                 {
                     $("#ModalTitulo").html(response.nombre);
-                    $("#Nombre").html(response.nombre);
-                    $("#Region").html("<br>" + response.region);
-                    $("#FechaSalida").html("<br>" + response.fechaSalida);
-                    $("#Generacion").html("<br>" + response.generacion);
-                    $("#Pokedex").html("<br>" + response.pokedex);
+                    $("#FotoJuego").attr("src", response.fotoJuego)
+                    $("#Nombre").html("<br>" + "Nombre: " +response.nombre);
+                    $("#Region").html("Region: " + response.region);
+                    $("#FechaSalida").html("Fecha de salida: " + response.fechaSalida.split('T')[0].replace('-','/').replace('-','/'));
+                    $("#Generacion").html("Generacion: " + response.generacion);
+                    $("#Pokedex").html("Cantidad pokemons: " + response.pokedex);
                 },
             complete:
                 function(xhr, status){
