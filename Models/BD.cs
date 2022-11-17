@@ -48,10 +48,10 @@ public static class BD
     }
     public static Juego VerInfoJuego(string nombre)
     {
-        Juego juego = new Juego();
+        Juego juego;
         using (SqlConnection bd = new SqlConnection(_connectionString))
         {
-            string sql = $"SELECT * FROM Juegos WHERE Nombre = {nombre}";
+            string sql = $"SELECT * FROM Juegos WHERE Nombre = '{nombre}'";
             juego = bd.QueryFirstOrDefault<Juego>(sql);
         }
         return juego;
