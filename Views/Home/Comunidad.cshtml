@@ -7,105 +7,105 @@
 
 </body>
 <h2 style="color:#FFFFFF" class="text-center">Pokemon creados por la comunidad</h2>
-  <div class="row">
-    <div id="carusel-comunidad" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="/img/pokemon1.jpg" class="carusel-img">
-        </div>
-        <div class="carousel-item">
-          <img src="/img/pokemon2.jpg" class="carusel-img" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="/img/pokemon3.jpg" class="carusel-img " alt="...">
-        </div>
+<div class="row">
+  <div id="carusel-comunidad" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/img/pokemon1.jpg" class="carusel-img">
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carusel-comunidad"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carusel-comunidad"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="carousel-item">
+        <img src="/img/pokemon2.jpg" class="carusel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/pokemon3.jpg" class="carusel-img " alt="...">
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carusel-comunidad" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carusel-comunidad" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
+</div>
 <div class="text-center">
   <h3 style="color:#FFFFFF">Creador de Pokemons</h2>
     <br>
+    <form action='@Url.Action("GuardarPokemon")' method="post" enctype="multipart/form-data">
+      <input name="pokemon.FechaCreacion" value="@DateTime.Now" class="d-none">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" name="pokemon.Nombre">
+      </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Nombre</span>
-      <input type="text" class="form-control" aria-describedby="basic-addon1">
-    </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Primer Tipo</label>
+        <select class="form-select" id="inputGroupSelect01" name="pokemon.Tipo1">
+          <option selected>Choose...</option>
+          <option value="1">Fuego</option>
+          <option value="2">Agua</option>
+          <option value="3">Planta</option>
+          <option value="4">Bicho</option>
+          <option value="5">Veneno</option>
+          <option value="6">Volador</option>
+          <option value="7">Hada</option>
+          <option value="8">Dragon</option>
+          <option value="9">Normal</option>
+          <option value="10">Psiquico</option>
+          <option value="11">Fantasma</option>
+          <option value="12">Siniestro</option>
+          <option value="13">Tierra</option>
+          <option value="14">Roca</option>
+          <option value="15">Electrico</option>
+          <option value="16">Lucha</option>
+          <option value="17">Hielo</option>
+          <option value="18">Acero</option>
+        </select>
+      </div>
 
-    <div class="input-group mb-3">
-      <label class="input-group-text" for="inputGroupSelect01">Primer Tipo</label>
-      <select class="form-select" id="inputGroupSelect01">
-        <option selected>Choose...</option>
-        <option value="1" >Fuego</option>
-        <option value="2">Agua</option>
-        <option value="3">Planta</option>
-        <option value="4">Bicho</option>
-        <option value="5">Veneno</option>
-        <option value="6">Volador</option>
-        <option value="7">Hada</option>
-        <option value="8">Dragon</option>
-        <option value="9">Normal</option>
-        <option value="10">Psiquico</option>
-        <option value="11">Fantasma</option>
-        <option value="12">Siniestro</option>
-        <option value="13">Tierra</option>
-        <option value="14">Roca</option>
-        <option value="15">Electrico</option>
-        <option value="16">Lucha</option>
-        <option value="17">Hielo</option>
-        <option value="18">Acero</option>
-      </select>
-    </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Segundo Tipo(Opcional)</label>
+        <select class="form-select" id="inputGroupSelect01" name="pokemon.Tipo2">
+          <option selected>Choose...</option>
+          <option value="1">Fuego</option>
+          <option value="2">Agua</option>
+          <option value="3">Planta</option>
+          <option value="4">Bicho</option>
+          <option value="5">Veneno</option>
+          <option value="6">Volador</option>
+          <option value="7">Hada</option>
+          <option value="8">Dragon</option>
+          <option value="9">Normal</option>
+          <option value="10">Psiquico</option>
+          <option value="11">Fantasma</option>
+          <option value="12">Siniestro</option>
+          <option value="13">Tierra</option>
+          <option value="14">Roca</option>
+          <option value="15">Electrico</option>
+          <option value="16">Lucha</option>
+          <option value="17">Hielo</option>
+          <option value="18">Acero</option>
+        </select>
+      </div>
 
-    <div class="input-group mb-3">
-      <label class="input-group-text" for="inputGroupSelect01">Segundo Tipo(Opcional)</label>
-      <select class="form-select" id="inputGroupSelect01">
-        <option selected>Choose...</option>
-        <option value="1">Fuego</option>
-        <option value="2">Agua</option>
-        <option value="3">Planta</option>
-        <option value="4">Bicho</option>
-        <option value="5">Veneno</option>
-        <option value="6">Volador</option>
-        <option value="7">Hada</option>
-        <option value="8">Dragon</option>
-        <option value="9">Normal</option>
-        <option value="10">Psiquico</option>
-        <option value="11">Fantasma</option>
-        <option value="12">Siniestro</option>
-        <option value="13">Tierra</option>
-        <option value="14">Roca</option>
-        <option value="15">Electrico</option>
-        <option value="16">Lucha</option>
-        <option value="17">Hielo</option>
-        <option value="18">Acero</option>
-      </select>
-    </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">Altura</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="pokemon.Altura">
+      </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon3">Altura</span>
-      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">Peso</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="pokemon.Peso">
+      </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon3">Peso</span>
-      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
-
-    <div class="input-group mb-3">
-      <input type="file" class="form-control" id="inputGroupFile02">
-      <label class="input-group-text" for="inputGroupFile02">Upload</label>
-    </div>
-    <br>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="btn btn-primary btn-lg">Crear Pokemon</button>
-    </div>
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" name="MyFile">
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+      </div>
+      <br>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-primary btn-lg">Crear Pokemon</button>
+      </div>
+    </form>

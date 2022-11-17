@@ -24,6 +24,7 @@ public Pokemon(int IdPokemon, string Nombre, DateTime FechaCreacion, string Foto
         _Pokedex = Pokedex;
         _PAparicion = PAparicion;
 }
+public Pokemon(){}
 public int IdPokemon
 {
     get{return _IdPokemon;}
