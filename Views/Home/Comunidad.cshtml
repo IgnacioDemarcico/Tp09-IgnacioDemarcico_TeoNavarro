@@ -3,13 +3,12 @@
 }
 
 <body>
-  <br>
-
-</body>
+<div style="margin-top: 1%;">
 <h2 style="color:#FFFFFF" class="text-center">Pokemon creados por la comunidad</h2>
 <div class="row">
   <div id="carusel-comunidad" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner row justify-content-center">
+      <div class="img-fluid">
       <div class="carousel-item active">
         <img src="/img/pokemon1.jpg" class="carusel-img">
       </div>
@@ -30,8 +29,9 @@
     </button>
   </div>
 </div>
+</div>
 <div class="text-center">
-  <h3 style="color:#FFFFFF">Creador de Pokemons</h2>
+  <h3 class="letra" style="margin-top: 1%;">Creador de Pokemons</h2>
     <br>
     <form action='@Url.Action("GuardarPokemon")' method="post" enctype="multipart/form-data">
       <input name="pokemon.FechaCreacion" value="@DateTime.Now" class="d-none">
@@ -109,3 +109,5 @@
         <button type="submit" class="btn btn-primary btn-lg">Crear Pokemon</button>
       </div>
     </form>
+</div>
+</body>
