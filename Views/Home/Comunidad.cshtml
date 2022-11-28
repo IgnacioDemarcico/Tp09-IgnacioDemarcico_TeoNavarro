@@ -44,49 +44,49 @@
         <label class="input-group-text" for="inputGroupSelect01">Primer Tipo</label>
         <select class="form-select" id="inputGroupSelect01" name="pokemon.Tipo1">
           <option selected>Choose...</option>
-          <option value="1">Fuego</option>
-          <option value="2">Agua</option>
-          <option value="3">Planta</option>
-          <option value="4">Bicho</option>
-          <option value="5">Veneno</option>
-          <option value="6">Volador</option>
-          <option value="7">Hada</option>
-          <option value="8">Dragon</option>
-          <option value="9">Normal</option>
-          <option value="10">Psiquico</option>
-          <option value="11">Fantasma</option>
-          <option value="12">Siniestro</option>
-          <option value="13">Tierra</option>
-          <option value="14">Roca</option>
-          <option value="15">Electrico</option>
-          <option value="16">Lucha</option>
-          <option value="17">Hielo</option>
-          <option value="18">Acero</option>
+          <option value="Fuego">Fuego</option>
+          <option value="Agua">Agua</option>
+          <option value="Planta">Planta</option>
+          <option value="Bicho">Bicho</option>
+          <option value="Veneno">Veneno</option>
+          <option value="Volador">Volador</option>
+          <option value=">Hada">Hada</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Normal">Normal</option>
+          <option value="Psiquico">Psiquico</option>
+          <option value="Fantasma">Fantasma</option>
+          <option value="Siniestro">Siniestro</option>
+          <option value="Tierra">Tierra</option>
+          <option value="Roca">Roca</option>
+          <option value="Electrico">Electrico</option>
+          <option value="Lucha">Lucha</option>
+          <option value="Hielo">Hielo</option>
+          <option value="Acero">Acero</option>
         </select>
       </div>
 
       <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupSelect01">Segundo Tipo(Opcional)</label>
         <select class="form-select" id="inputGroupSelect01" name="pokemon.Tipo2">
-          <option selected>Choose...</option>
-          <option value="1">Fuego</option>
-          <option value="2">Agua</option>
-          <option value="3">Planta</option>
-          <option value="4">Bicho</option>
-          <option value="5">Veneno</option>
-          <option value="6">Volador</option>
-          <option value="7">Hada</option>
-          <option value="8">Dragon</option>
-          <option value="9">Normal</option>
-          <option value="10">Psiquico</option>
-          <option value="11">Fantasma</option>
-          <option value="12">Siniestro</option>
-          <option value="13">Tierra</option>
-          <option value="14">Roca</option>
-          <option value="15">Electrico</option>
-          <option value="16">Lucha</option>
-          <option value="17">Hielo</option>
-          <option value="18">Acero</option>
+           <option selected>Choose...</option>
+          <option value="Fuego">Fuego</option>
+          <option value="Agua">Agua</option>
+          <option value="Planta">Planta</option>
+          <option value="Bicho">Bicho</option>
+          <option value="Veneno">Veneno</option>
+          <option value="Volador">Volador</option>
+          <option value=">Hada">Hada</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Normal">Normal</option>
+          <option value="Psiquico">Psiquico</option>
+          <option value="Fantasma">Fantasma</option>
+          <option value="Siniestro">Siniestro</option>
+          <option value="Tierra">Tierra</option>
+          <option value="Roca">Roca</option>
+          <option value="Electrico">Electrico</option>
+          <option value="Lucha">Lucha</option>
+          <option value="Hielo">Hielo</option>
+          <option value="Acero">Acero</option>
         </select>
       </div>
 
@@ -111,3 +111,21 @@
     </form>
 </div>
 </body>
+
+<br>
+<br>
+ <div class="text-center">
+  <h3 class="letra" style="margin-top: 1%;">Eliminador de Pokemons</h2>
+    <br>
+    <form action='@Url.Action("GuardarPokemon")' method="post" enctype="multipart/form-data">
+      <input name="pokemon.FechaCreacion" value="@DateTime.Now" class="d-none">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" name="pokemon.Nombre">
+      </div>
+      <br>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-primary btn-lg">Eliminar Pokemon</button>
+      </div>
+    </form>
+</div>
