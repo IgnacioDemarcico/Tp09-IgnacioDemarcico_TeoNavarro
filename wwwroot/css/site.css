@@ -19,7 +19,10 @@ body {
 
 .card-img-top{
   max-height: 150px;
+}
 
+.card-img-top-2{
+  max-height: 200px;
 }
 
 .carusel-img{
