@@ -77,6 +77,12 @@ public class HomeController : Controller
         return juego;
     }
 
+    public Pokemon MostrarInfoPokemon(string nombre)
+    {
+        Pokemon pokemon = BD.VerInfoPokemon(nombre);
+        return pokemon;
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
