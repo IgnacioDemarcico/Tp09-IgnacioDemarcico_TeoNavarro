@@ -13,17 +13,14 @@ public static class BD
         {
             string sql = $"INSERT INTO Pokemons(Nombre, FechaCreacion, Foto, Tipo1, Tipo2, Altura, Peso) VALUES(@pNombre,@pFechaCreacion,@pFoto,@pTipo1,@pTipo2,@pAltura,@pPeso)";
             bd.Execute(sql, new {pNombre = Pokemon.Nombre, pFechaCreacion = Pokemon.FechaCreacion, pFoto = "/bd/"+ Pokemon.Foto, pTipo1 = Pokemon.Tipo1, pTipo2 = Pokemon.Tipo2, pAltura = Pokemon.Altura, pPeso = Pokemon.Peso});
-
         }
-        
     }
     public static void EliminarPokemon(int IdPokemon)
     {
-        int RegistrosEliminados = 0;
         using (SqlConnection bd = new SqlConnection(_connectionString))
         {
-            string sql = $"DELETE FROM Pokemons j WHERE j.IdPokemon = {IdPokemon}";
-            RegistrosEliminados = bd.Execute(sql);
+            string sql = $"DELETE FROM Pokemons WHERE IdPokemon = {IdPokemon}";
+            bd.Execute(sql);
         }
     }
    /* public static Equipo VerInfoEquipo(int IdEquipo)
@@ -65,6 +62,37 @@ public static class BD
             ListaJuegos = bd.Query<Juego>(sql).ToList();
         }
         return ListaJuegos;
+    }
+
+    public static List<Pokemon> ListarPokemonsComunidad()
+    {
+        List<Pokemon> Listapokemons = new List<Pokemon>();
+        using (SqlConnection bd = new SqlConnection(_connectionString))
+        {
+            string sql = $"Select * from pokemons where Pokedex is NULL";
+            Listapokemons = bd.Query<Pokemon>(sql).ToList();
+        }
+        return Listapokemons;
+    }
+        public static List<Pokemon> ListarPokemonsOficiales()
+    {
+        List<Pokemon> Listapokemons = new List<Pokemon>();
+        using (SqlConnection bd = new SqlConnection(_connectionString))
+        {
+            string sql = $"Select * from pokemons where Pokedex is not NULL";
+            Listapokemons = bd.Query<Pokemon>(sql).ToList();
+        }
+        return Listapokemons;
+    }
+        public static List<Pokemon> ListarPokemons()
+    {
+        List<Pokemon> Listapokemons = new List<Pokemon>();
+        using (SqlConnection bd = new SqlConnection(_connectionString))
+        {
+            string sql = $"Select * from pokemons";
+            Listapokemons = bd.Query<Pokemon>(sql).ToList();
+        }
+        return Listapokemons;
     }
 }
 

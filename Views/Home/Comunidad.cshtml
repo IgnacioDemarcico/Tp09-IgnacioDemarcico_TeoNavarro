@@ -116,16 +116,19 @@
 <br>
  <div class="text-center">
   <h3 class="letra" style="margin-top: 1%;">Eliminador de Pokemons</h2>
+  
     <br>
-    <form action='@Url.Action("GuardarPokemon")' method="post" enctype="multipart/form-data">
-      <input name="pokemon.FechaCreacion" value="@DateTime.Now" class="d-none">
+    <form action='@Url.Action("EliminarPokemon")' method="post" enctype="multipart/form-data">
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nombre</span>
-        <input type="text" class="form-control" aria-describedby="basic-addon1" name="pokemon.Nombre">
+        <input type="text" class="form-control" aria-describedby="basic-addon1" name="nombre">
       </div>
+
       <br>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="submit" class="btn btn-primary btn-lg">Eliminar Pokemon</button>
       </div>
     </form>
+
 </div>

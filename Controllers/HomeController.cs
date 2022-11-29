@@ -41,6 +41,11 @@ public class HomeController : Controller
     }
     [HttpPost] public IActionResult GuardarPokemon(Pokemon pokemon, IFormFile MyFile)
     {
+        List<Pokemon> ListaPokemons = BD.ListarPokemons();
+        foreach (Pokemon item in ListaPokemons){ // Acá devuelve la view sin agregar el pokemon, xq el nombre ya existe
+            if (item.Nombre == pokemon.Nombre) return RedirectToAction("Comunidad");
+        }
+        
         if(!Directory.Exists(this._environment.WebRootPath + @"\img\pokemons\"))
         {
             Directory.CreateDirectory(this._environment.WebRootPath + @"\img\pokemons");
@@ -50,7 +55,21 @@ public class HomeController : Controller
         pokemon.Foto = MyFile.FileName;
 
         BD.AgregarPokemon(pokemon);
-        return View("Comunidad");
+        return RedirectToAction("Comunidad");
+    }
+    [HttpPost] public IActionResult EliminarPokemon(string nombre)
+    {
+        List<Pokemon> ListaPokemons = BD.ListarPokemons();
+        foreach (Pokemon item in ListaPokemons){
+            if (item.Nombre == nombre)
+            {
+                BD.EliminarPokemon(item.IdPokemon);
+                return RedirectToAction("Comunidad"); // Termina la función y elimina el pokemon con el nombre ingresado
+            }
+        }
+        
+        // Termina la función y sin eliminar nada porque no se encontró el pokemon con el nombre ingresado
+        return RedirectToAction("Comunidad");
     }
     public Juego DevolverJuego(string nombreJuego)
     {
