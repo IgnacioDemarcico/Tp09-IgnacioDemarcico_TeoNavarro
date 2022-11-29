@@ -77,9 +77,9 @@ public class HomeController : Controller
         return juego;
     }
 
-    public Pokemon MostrarInfoPokemon(string nombre)
+    public Pokemon MostrarInfoPokemon(string Nombre)
     {
-        Pokemon pokemon = BD.VerInfoPokemon(nombre);
+        Pokemon pokemon = BD.VerInfoPokemonXnombre(Nombre);
         return pokemon;
     }
 

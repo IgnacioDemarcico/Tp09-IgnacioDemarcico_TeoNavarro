@@ -6,7 +6,7 @@ using Dapper;
 namespace Tp09_IgnacioDemarcico_TeoNavarro.Models;
 public static class BD
 {
-    private static string _connectionString = @"Server=A-PHZ2-CIDI-032;DataBase=Pokebae;Trusted_Connection=True";
+    private static string _connectionString = @"Server=A-PHZ2-CIDI-028;DataBase=Pokebae;Trusted_Connection=True";
     public static void AgregarPokemon(Pokemon Pokemon)
     {
         using (SqlConnection bd = new SqlConnection(_connectionString))
@@ -23,16 +23,7 @@ public static class BD
             bd.Execute(sql);
         }
     }
-   /* public static Equipo VerInfoEquipo(int IdEquipo)
-    {
-        Equipo equipo;
-        using (SqlConnection bd = new SqlConnection(_connectionString))
-        {
-            string sql = $"SELECT * FROM Equipos e WHERE e.IdEquipo = @pIdEquipo";
-            equipo = bd.QueryFirstOrDefault<Equipo>(sql, new { pIdEquipo = IdEquipo });
-        }
-        return equipo;
-    }*/
+
     public static Pokemon VerInfoPokemon(int IdPokemon)
     {
         Pokemon Pokemon;
@@ -40,6 +31,17 @@ public static class BD
         {
             string sql = $"SELECT * FROM Pokemons j WHERE j.IdPokemon = @pId";
             Pokemon = bd.QueryFirstOrDefault<Pokemon>(sql, new { pId = IdPokemon});
+        }
+        return Pokemon;
+    }
+
+    public static Pokemon VerInfoPokemonXnombre(string nombre)
+    {
+        Pokemon Pokemon;
+        using (SqlConnection bd = new SqlConnection(_connectionString))
+        {
+            string sql = $"SELECT * FROM Pokemons j WHERE j.Nombre = @pnombre";
+            Pokemon = bd.QueryFirstOrDefault<Pokemon>(sql, new { pnombre =nombre});
         }
         return Pokemon;
     }
